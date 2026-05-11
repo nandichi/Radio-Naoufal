@@ -5,8 +5,6 @@ import Observation
 @Observable
 public final class SettingsViewModel {
 
-    public var sleepMinutesPresets: [Int] { [15, 30, 45, 60, 90] }
-
     public private(set) var sleepTimerActive: Bool = false
     public private(set) var sleepTimerRemaining: TimeInterval = 0
     public private(set) var sleepTimerDuration: TimeInterval = 0
@@ -19,6 +17,42 @@ public final class SettingsViewModel {
     public func bind(player: PlayerViewModel) {
         self.player = player
     }
+
+    // MARK: - Preferences
+
+    /// Vaste lijst van sleep-timer preset duraties (in minuten).
+    public var sleepMinutesPresets: [Int] { [15, 30, 45, 60, 90] }
+
+    /// Aanbevolen default sleep-duur uit UserDefaults. Wordt b.v. door SleepTimerPopover gebruikt
+    /// om de eerste keer een sensible default voor te selecteren.
+    public var defaultSleepMinutes: Int {
+        let stored = AppPreferences.int(AppPreferences.Keys.sleepTimerDefaultMinutes)
+        return stored > 0 ? stored : AppPreferences.Defaults.sleepTimerDefaultMinutes
+    }
+
+    /// Fade-out duur (s) die het uiteindelijke einde van de sleep timer aankondigt.
+    public var sleepFadeDuration: TimeInterval {
+        let stored = AppPreferences.double(AppPreferences.Keys.sleepTimerFadeDuration)
+        return stored > 0 ? stored : AppPreferences.Defaults.sleepTimerFadeDuration
+    }
+
+    /// Past de UserDefaults waarden toe op de player bij app-start.
+    public func applyInitialPreferences(to player: PlayerViewModel) {
+        let storedVolume = AppPreferences.double(AppPreferences.Keys.defaultVolume)
+        let initial = storedVolume > 0 ? Float(storedVolume) : Float(AppPreferences.Defaults.defaultVolume)
+        player.setVolume(initial)
+    }
+
+    /// Bij app-start: indien autoplay aan staat en er een laatst-gespeelde zender bekend is,
+    /// laad die zender en speel hem af.
+    public func autoplayLastStationIfNeeded(player: PlayerViewModel) {
+        guard AppPreferences.bool(AppPreferences.Keys.autoplayLastStation) else { return }
+        guard let id = AppPreferences.string(AppPreferences.Keys.lastStationID) else { return }
+        guard let station = player.stations.station(byID: id) else { return }
+        player.play(station: station)
+    }
+
+    // MARK: - Sleep timer
 
     public func startSleepTimer(minutes: Int) {
         cancelSleepTimer()
@@ -53,7 +87,7 @@ public final class SettingsViewModel {
 
     private func fireSleep() async {
         guard let player else { return }
-        await player.audio.fadeOutAndStop(duration: 5)
+        await player.audio.fadeOutAndStop(duration: sleepFadeDuration)
         sleepTimerActive = false
         sleepTimerRemaining = 0
         sleepTimerDuration = 0

@@ -54,15 +54,32 @@ public final class DataStore {
         }
     }
 
+    /// Per-episode opgeslagen resume-positie (seconden vanaf begin).
+    public struct EpisodeProgress: Codable, Hashable, Sendable {
+        public let episodeID: String
+        public var positionSeconds: TimeInterval
+        public var lastListenedAt: Date
+
+        public init(episodeID: String, positionSeconds: TimeInterval, lastListenedAt: Date = .now) {
+            self.episodeID = episodeID
+            self.positionSeconds = positionSeconds
+            self.lastListenedAt = lastListenedAt
+        }
+    }
+
     public private(set) var favorites: [FavoriteSlot] = []
     public private(set) var recents: [RecentPlay] = []
     public private(set) var customStations: [UserCustomStation] = []
+    public private(set) var subscribedPodcasts: [Podcast] = []
+    public private(set) var episodeProgress: [String: EpisodeProgress] = [:]
 
     private let logger = Logger(subsystem: "nl.naoufal.radio-naoufal", category: "DataStore")
     private let baseDirectory: URL
     private let favoritesFile: URL
     private let recentsFile: URL
     private let customStationsFile: URL
+    private let podcastsFile: URL
+    private let progressFile: URL
 
     private static let maxRecents = 20
 
@@ -82,6 +99,8 @@ public final class DataStore {
         self.favoritesFile = base.appendingPathComponent("favorites.json")
         self.recentsFile = base.appendingPathComponent("recents.json")
         self.customStationsFile = base.appendingPathComponent("custom-stations.json")
+        self.podcastsFile = base.appendingPathComponent("podcasts.json")
+        self.progressFile = base.appendingPathComponent("podcast-progress.json")
         ensureDirectoryExists()
         loadAll()
     }
@@ -133,6 +152,49 @@ public final class DataStore {
         save(customStations, to: customStationsFile)
     }
 
+    public func replaceAllCustomStations(_ stations: [UserCustomStation]) {
+        customStations = stations
+        save(customStations, to: customStationsFile)
+    }
+
+    public func replaceAllFavorites(_ favorites: [FavoriteSlot]) {
+        self.favorites = favorites.sorted(by: { $0.slotIndex < $1.slotIndex })
+        save(self.favorites, to: favoritesFile)
+    }
+
+    // MARK: - Podcasts
+
+    public func subscribePodcast(_ podcast: Podcast) {
+        subscribedPodcasts.removeAll(where: { $0.id == podcast.id })
+        subscribedPodcasts.append(podcast)
+        save(subscribedPodcasts, to: podcastsFile)
+    }
+
+    public func unsubscribePodcast(id: String) {
+        subscribedPodcasts.removeAll(where: { $0.id == id })
+        save(subscribedPodcasts, to: podcastsFile)
+    }
+
+    public func isSubscribed(podcastID: String) -> Bool {
+        subscribedPodcasts.contains(where: { $0.id == podcastID })
+    }
+
+    // MARK: - Episode progress
+
+    public func progress(for episodeID: String) -> EpisodeProgress? {
+        episodeProgress[episodeID]
+    }
+
+    public func setProgress(_ progress: EpisodeProgress) {
+        episodeProgress[progress.episodeID] = progress
+        save(episodeProgress, to: progressFile)
+    }
+
+    public func clearProgress(for episodeID: String) {
+        episodeProgress.removeValue(forKey: episodeID)
+        save(episodeProgress, to: progressFile)
+    }
+
     // MARK: - IO
 
     private func ensureDirectoryExists() {
@@ -143,6 +205,8 @@ public final class DataStore {
         favorites = (try? load([FavoriteSlot].self, from: favoritesFile)) ?? []
         recents = (try? load([RecentPlay].self, from: recentsFile)) ?? []
         customStations = (try? load([UserCustomStation].self, from: customStationsFile)) ?? []
+        subscribedPodcasts = (try? load([Podcast].self, from: podcastsFile)) ?? []
+        episodeProgress = (try? load([String: EpisodeProgress].self, from: progressFile)) ?? [:]
     }
 
     private func load<T: Decodable>(_ type: T.Type, from url: URL) throws -> T {

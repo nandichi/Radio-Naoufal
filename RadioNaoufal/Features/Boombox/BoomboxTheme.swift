@@ -1,56 +1,40 @@
 import SwiftUI
 
 /// Centrale kleur- en stijl-definities voor de boombox.
+/// Leest doorlopend uit `currentPalette` zodat een theme-switch via `ThemeProvider` direct
+/// reflecteert in alle views (mits hun parent een `.id(currentPalette.id)` of equivalent gebruikt).
 enum BoomboxTheme {
+
+    /// De actief gebruikte theme. Wordt door `ThemeProvider` bij theme-wisseling geset.
+    @MainActor static var currentPalette: BoomboxThemePalette = .blackChrome
 
     // MARK: - Colors
 
-    static let chassisDark = Color(red: 0.09, green: 0.10, blue: 0.11)
-    static let chassisMid = Color(red: 0.14, green: 0.15, blue: 0.17)
-    static let chassisLight = Color(red: 0.22, green: 0.23, blue: 0.26)
-    static let chassisHighlight = Color(red: 0.35, green: 0.36, blue: 0.40)
+    @MainActor static var chassisDark: Color { currentPalette.chassisDark }
+    @MainActor static var chassisMid: Color { currentPalette.chassisMid }
+    @MainActor static var chassisLight: Color { currentPalette.chassisLight }
+    @MainActor static var chassisHighlight: Color { currentPalette.chassisHighlight }
 
-    static let chrome = Color(red: 0.78, green: 0.79, blue: 0.82)
-    static let chromeBright = Color(red: 0.93, green: 0.94, blue: 0.96)
-    static let chromeDark = Color(red: 0.40, green: 0.42, blue: 0.45)
+    @MainActor static var chrome: Color { currentPalette.chrome }
+    @MainActor static var chromeBright: Color { currentPalette.chromeBright }
+    @MainActor static var chromeDark: Color { currentPalette.chromeDark }
 
-    static let amber = Color(red: 1.00, green: 0.71, blue: 0.12)
-    static let amberGlow = Color(red: 1.00, green: 0.55, blue: 0.06)
-    static let amberDim = Color(red: 0.55, green: 0.38, blue: 0.08)
+    @MainActor static var amber: Color { currentPalette.amber }
+    @MainActor static var amberGlow: Color { currentPalette.amberGlow }
+    @MainActor static var amberDim: Color { currentPalette.amberDim }
 
-    static let lcdBackground = Color(red: 0.04, green: 0.03, blue: 0.02)
-    static let lcdAmber = Color(red: 1.00, green: 0.65, blue: 0.10)
-    static let lcdGreen = Color(red: 0.35, green: 1.00, blue: 0.50)
+    @MainActor static var lcdBackground: Color { currentPalette.lcdBackground }
+    @MainActor static var lcdAmber: Color { currentPalette.lcdAmber }
+    @MainActor static var lcdGreen: Color { currentPalette.lcdGreen }
 
-    static let presetRed = Color(red: 0.92, green: 0.22, blue: 0.20)
-    static let presetGreen = Color(red: 0.20, green: 0.78, blue: 0.45)
+    @MainActor static var presetRed: Color { currentPalette.presetRed }
+    @MainActor static var presetGreen: Color { currentPalette.presetGreen }
 
     // MARK: - Gradients
 
-    static var chassisGradient: LinearGradient {
-        LinearGradient(
-            colors: [chassisLight, chassisMid, chassisDark],
-            startPoint: .top,
-            endPoint: .bottom
-        )
-    }
-
-    static var chromeBevel: LinearGradient {
-        LinearGradient(
-            colors: [chromeBright, chrome, chromeDark, chrome],
-            startPoint: .top,
-            endPoint: .bottom
-        )
-    }
-
-    static var knobGradient: AngularGradient {
-        AngularGradient(
-            colors: [chromeBright, chrome, chromeDark, chrome, chromeBright],
-            center: .center,
-            startAngle: .degrees(-30),
-            endAngle: .degrees(330)
-        )
-    }
+    @MainActor static var chassisGradient: LinearGradient { currentPalette.chassisGradient }
+    @MainActor static var chromeBevel: LinearGradient { currentPalette.chromeBevel }
+    @MainActor static var knobGradient: AngularGradient { currentPalette.knobGradient }
 
     // MARK: - Fonts
 
@@ -83,7 +67,7 @@ enum BoomboxTheme {
 }
 
 extension ShapeStyle where Self == Color {
-    static var amber: Color { BoomboxTheme.amber }
-    static var amberGlow: Color { BoomboxTheme.amberGlow }
-    static var lcdAmber: Color { BoomboxTheme.lcdAmber }
+    @MainActor static var amber: Color { BoomboxTheme.amber }
+    @MainActor static var amberGlow: Color { BoomboxTheme.amberGlow }
+    @MainActor static var lcdAmber: Color { BoomboxTheme.lcdAmber }
 }

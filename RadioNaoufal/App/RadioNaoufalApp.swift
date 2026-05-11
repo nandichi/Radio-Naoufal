@@ -4,11 +4,25 @@ import AppKit
 @main
 struct RadioNaoufalApp: App {
 
-    @State private var player = PlayerViewModel()
-    @State private var settings = SettingsViewModel()
+    @State private var player: PlayerViewModel
+    @State private var settings: SettingsViewModel
+    @State private var theme: ThemeProvider
+
+    @AppStorage(AppPreferences.Keys.showMenuBarPlayer) private var showMenuBarPlayer: Bool = AppPreferences.Defaults.showMenuBarPlayer
 
     init() {
+        AppPreferences.registerDefaults()
+        // Verwijder oude time-shift tmp-files (>1 dag) van vorige sessies
+        RewindFileWriter.cleanup()
+        let player = PlayerViewModel()
+        let settings = SettingsViewModel()
+        let theme = ThemeProvider()
         settings.bind(player: player)
+        settings.applyInitialPreferences(to: player)
+        theme.applyStoredTheme()
+        _player = State(wrappedValue: player)
+        _settings = State(wrappedValue: settings)
+        _theme = State(wrappedValue: theme)
     }
 
     var body: some Scene {
@@ -16,6 +30,7 @@ struct RadioNaoufalApp: App {
             RootContainerView()
                 .environment(player)
                 .environment(settings)
+                .environment(theme)
                 .frame(minWidth: 980, minHeight: 640)
                 .preferredColorScheme(.dark)
                 .background(WindowAccessor())
@@ -53,10 +68,18 @@ struct RadioNaoufalApp: App {
             }
         }
 
-        MenuBarExtra {
+        Settings {
+            SettingsWindow()
+                .environment(player)
+                .environment(settings)
+                .environment(theme)
+        }
+
+        MenuBarExtra(isInserted: $showMenuBarPlayer) {
             MenubarPlayerView()
                 .environment(player)
                 .environment(settings)
+                .environment(theme)
                 .frame(width: 320)
         } label: {
             MenubarLabelView()
@@ -87,12 +110,14 @@ struct WindowAccessor: NSViewRepresentable {
 /// Root view die de stations data laadt bij appearance.
 struct RootContainerView: View {
     @Environment(PlayerViewModel.self) private var player
+    @Environment(SettingsViewModel.self) private var settings
 
     var body: some View {
         ContentView()
             .onAppear {
                 Task {
                     await player.stations.loadRadioBrowserStations()
+                    settings.autoplayLastStationIfNeeded(player: player)
                 }
             }
     }

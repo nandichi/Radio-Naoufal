@@ -19,8 +19,16 @@ public final class AudioTap: @unchecked Sendable {
     private let handler: FrameHandler
     private var tap: MTAudioProcessingTap?
 
-    public init(handler: @escaping FrameHandler) {
+    /// EQ-processor die in de audio-thread in-place op de samples wordt toegepast.
+    /// Een nil-waarde of `.flat` preset betekent geen filtering.
+    public let eqProcessor: EQProcessor
+
+    /// Ringbuffer voor time-shift rewind. Wordt door `AudioEngine` ingesteld voor live streams.
+    public var timeShiftBuffer: TimeShiftBuffer?
+
+    public init(handler: @escaping FrameHandler, eqProcessor: EQProcessor = EQProcessor()) {
         self.handler = handler
+        self.eqProcessor = eqProcessor
     }
 
     /// Installeer de tap op een `AVPlayerItem`.
@@ -144,6 +152,7 @@ private func tapProcess(
     let sampleRate: Double = 44_100
 
     let floats = rawPointer.bindMemory(to: Float.self, capacity: frameCount * channelCount)
+    let eqProcessor = audioTap.eqProcessor
 
     // For interleaved or planar data, compute RMS and peak
     var leftSum: Float = 0
@@ -155,6 +164,13 @@ private func tapProcess(
         // planar
         if let leftPtr = buffers[0].mData?.bindMemory(to: Float.self, capacity: frameCount),
            let rightPtr = buffers[1].mData?.bindMemory(to: Float.self, capacity: frameCount) {
+            // EQ in-place per kanaal voordat we metrics meten (post-EQ visualisatie)
+            eqProcessor.process(channel: 0, samples: leftPtr, count: frameCount, sampleRate: sampleRate)
+            eqProcessor.process(channel: 1, samples: rightPtr, count: frameCount, sampleRate: sampleRate)
+
+            // Capture naar time-shift ringbuffer (na EQ zodat de rewind dezelfde EQ-output bevat)
+            audioTap.timeShiftBuffer?.append(left: leftPtr, right: rightPtr, frameCount: frameCount)
+
             var leftSquares: Float = 0
             var rightSquares: Float = 0
             vDSP_svesq(leftPtr, 1, &leftSquares, vDSP_Length(frameCount))
@@ -174,13 +190,27 @@ private func tapProcess(
             }
         }
     } else if channelCount == 2 {
-        // interleaved stereo
+        // interleaved stereo: deinterleave -> EQ -> reinterleave
         var leftBuffer = [Float](repeating: 0, count: frameCount)
         var rightBuffer = [Float](repeating: 0, count: frameCount)
         for i in 0..<frameCount {
             leftBuffer[i] = floats[i * 2]
             rightBuffer[i] = floats[i * 2 + 1]
         }
+        leftBuffer.withUnsafeMutableBufferPointer { leftPtr in
+            rightBuffer.withUnsafeMutableBufferPointer { rightPtr in
+                guard let lBase = leftPtr.baseAddress, let rBase = rightPtr.baseAddress else { return }
+                eqProcessor.process(channel: 0, samples: lBase, count: frameCount, sampleRate: sampleRate)
+                eqProcessor.process(channel: 1, samples: rBase, count: frameCount, sampleRate: sampleRate)
+                audioTap.timeShiftBuffer?.append(left: lBase, right: rBase, frameCount: frameCount)
+            }
+        }
+        // Re-interleave terug naar de output-buffer
+        for i in 0..<frameCount {
+            floats[i * 2] = leftBuffer[i]
+            floats[i * 2 + 1] = rightBuffer[i]
+        }
+
         leftBuffer.withUnsafeBufferPointer { left in
             rightBuffer.withUnsafeBufferPointer { right in
                 if let lBase = left.baseAddress, let rBase = right.baseAddress {
@@ -203,6 +233,8 @@ private func tapProcess(
         }
     } else {
         // mono
+        eqProcessor.process(channel: 0, samples: floats, count: frameCount, sampleRate: sampleRate)
+
         var squares: Float = 0
         vDSP_svesq(floats, 1, &squares, vDSP_Length(frameCount))
         leftSum = squares

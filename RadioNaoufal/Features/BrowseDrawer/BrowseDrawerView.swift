@@ -1,14 +1,18 @@
 import SwiftUI
 
 struct BrowseDrawerView: View {
+    @Environment(PlayerViewModel.self) private var player
+    @AppStorage(AppPreferences.Keys.defaultDrawerTab) private var defaultTab: String = AppPreferences.Defaults.defaultDrawerTab
     @Binding var isExpanded: Bool
     @State private var selectedTab: DrawerTab = .favorites
+    @State private var didApplyDefault: Bool = false
 
     enum DrawerTab: String, CaseIterable, Identifiable {
         case favorites
         case categories
         case search
         case recent
+        case podcasts
 
         var id: String { rawValue }
 
@@ -18,6 +22,7 @@ struct BrowseDrawerView: View {
             case .categories: return String(localized: "Categorieen")
             case .search: return String(localized: "Zoeken")
             case .recent: return String(localized: "Recent")
+            case .podcasts: return String(localized: "Podcasts")
             }
         }
 
@@ -27,6 +32,7 @@ struct BrowseDrawerView: View {
             case .categories: return "square.grid.2x2"
             case .search: return "magnifyingglass"
             case .recent: return "clock"
+            case .podcasts: return "waveform"
             }
         }
     }
@@ -78,6 +84,11 @@ struct BrowseDrawerView: View {
                     )
             )
 
+            // Optionele podcast-controls strip wanneer een episode actief is
+            if isExpanded && player.isPlayingEpisode {
+                PodcastPlayerControls()
+            }
+
             if isExpanded {
                 ZStack {
                     switch selectedTab {
@@ -89,6 +100,8 @@ struct BrowseDrawerView: View {
                         SearchTab()
                     case .recent:
                         RecentTab()
+                    case .podcasts:
+                        PodcastsTab()
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -105,6 +118,12 @@ struct BrowseDrawerView: View {
             }
         }
         .frame(maxHeight: isExpanded ? 360 : nil)
+        .onAppear {
+            if !didApplyDefault, let tab = DrawerTab(rawValue: defaultTab) {
+                selectedTab = tab
+                didApplyDefault = true
+            }
+        }
     }
 }
 

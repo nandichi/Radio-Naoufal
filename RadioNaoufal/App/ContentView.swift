@@ -4,18 +4,16 @@ import AVFoundation
 struct ContentView: View {
     @Environment(PlayerViewModel.self) private var player
     @Environment(SettingsViewModel.self) private var settings
+    @Environment(ThemeProvider.self) private var theme
 
     @State private var drawerExpanded: Bool = false
     @State private var showSearch: Bool = false
 
     var body: some View {
         ZStack {
-            // Backplate gradient achtergrond
+            // Backplate gradient achtergrond (passend bij theme)
             LinearGradient(
-                colors: [
-                    Color(red: 0.04, green: 0.05, blue: 0.07),
-                    Color(red: 0.10, green: 0.10, blue: 0.13)
-                ],
+                colors: backgroundColors,
                 startPoint: .top,
                 endPoint: .bottom
             )
@@ -34,9 +32,31 @@ struct ContentView: View {
                 BrowseDrawerView(isExpanded: $drawerExpanded)
             }
         }
+        .id(theme.current.id)
+        .preferredColorScheme(theme.current.preferredColorScheme)
         .sheet(isPresented: $showSearch) {
             SearchSheetView()
                 .environment(player)
+        }
+    }
+
+    private var backgroundColors: [Color] {
+        switch theme.current.id {
+        case "snow":
+            return [
+                Color(red: 0.94, green: 0.93, blue: 0.90),
+                Color(red: 0.84, green: 0.83, blue: 0.79)
+            ]
+        case "woodBrown":
+            return [
+                Color(red: 0.10, green: 0.07, blue: 0.04),
+                Color(red: 0.18, green: 0.12, blue: 0.06)
+            ]
+        default:
+            return [
+                Color(red: 0.04, green: 0.05, blue: 0.07),
+                Color(red: 0.10, green: 0.10, blue: 0.13)
+            ]
         }
     }
 }

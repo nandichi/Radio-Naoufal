@@ -6,6 +6,7 @@ struct CassetteDeckView: View {
 
     @State private var scrollOffset: CGFloat = 0
     @State private var lastTitle: String = ""
+    @State private var showStationInfo: Bool = false
 
     var body: some View {
         ZStack {
@@ -41,6 +42,23 @@ struct CassetteDeckView: View {
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 12)
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            guard player.currentStation != nil else { return }
+            showStationInfo.toggle()
+        }
+        .help(String(localized: "Klik voor station-info"))
+        .popover(isPresented: $showStationInfo, arrowEdge: .top) {
+            if let station = player.currentStation {
+                StationInfoPopover(
+                    station: station,
+                    nowPlaying: player.nowPlaying,
+                    onDismiss: { showStationInfo = false }
+                )
+            } else {
+                EmptyView()
+            }
         }
     }
 }

@@ -363,6 +363,361 @@
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Here you'll see a list of recently played stations." } }
       }
+    },
+    "Algemeen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "General" } }
+      }
+    },
+    "Stations" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stations" } }
+      }
+    },
+    "Over" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "About" } }
+      }
+    },
+    "Opstarten" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Startup" } }
+      }
+    },
+    "Audio" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Audio" } }
+      }
+    },
+    "Geluid" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sound" } }
+      }
+    },
+    "Weergave" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Appearance" } }
+      }
+    },
+    "Speel laatst gespeelde zender bij opstart" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Play last station on launch" } }
+      }
+    },
+    "Standaard volume" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Default volume" } }
+      }
+    },
+    "Onthoud volume tussen sessies" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remember volume between sessions" } }
+      }
+    },
+    "Toon menubar mini-player" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Show menubar mini-player" } }
+      }
+    },
+    "Fade-in bij afspelen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fade-in on play" } }
+      }
+    },
+    "Fade-out bij pauze/stop" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fade-out on pause/stop" } }
+      }
+    },
+    "Standaard sleep-timer duur" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Default sleep-timer duration" } }
+      }
+    },
+    "Fade bij sleep-timer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sleep-timer fade" } }
+      }
+    },
+    "Equalizer-preset" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Equalizer preset" } }
+      }
+    },
+    "Vlak (Flat)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Flat" } }
+      }
+    },
+    "Rock" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Rock" } }
+      }
+    },
+    "Klassiek" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Classical" } }
+      }
+    },
+    "Stem-boost" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Vocal boost" } }
+      }
+    },
+    "Thema" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Theme" } }
+      }
+    },
+    "Zwart-chrome" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Black chrome" } }
+      }
+    },
+    "Walnoot-bruin" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Walnut brown" } }
+      }
+    },
+    "Sneeuw-ivoor" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Snow ivory" } }
+      }
+    },
+    "Standaard drawer-tab" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Default drawer tab" } }
+      }
+    },
+    "Podcasts" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Podcasts" } }
+      }
+    },
+    "Toon track-titel in menubar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Show track title in menubar" } }
+      }
+    },
+    "Haal track-artwork op (iTunes Search)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fetch track artwork (iTunes Search)" } }
+      }
+    },
+    "Eigen zenders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Custom stations" } }
+      }
+    },
+    "Nog geen eigen zenders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No custom stations yet" } }
+      }
+    },
+    "Voeg een eigen stream-URL toe om hem in de drawer en preset-slots beschikbaar te maken." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add your own stream URL so it shows in the drawer and preset slots." } }
+      }
+    },
+    "Bewerk" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit" } }
+      }
+    },
+    "Verwijder" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete" } }
+      }
+    },
+    "Eigen zender toevoegen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add custom station" } }
+      }
+    },
+    "Eigen zender bewerken" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit custom station" } }
+      }
+    },
+    "Naam" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Name" } }
+      }
+    },
+    "Stream-URL" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stream URL" } }
+      }
+    },
+    "Logo-URL (optioneel)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Logo URL (optional)" } }
+      }
+    },
+    "Bijv. Mijn lokale zender" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "E.g. My local station" } }
+      }
+    },
+    "Verplicht" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Required" } }
+      }
+    },
+    "Optioneel" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Optional" } }
+      }
+    },
+    "URL moet beginnen met http:// of https://" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "URL must start with http:// or https://" } }
+      }
+    },
+    "Annuleer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } }
+      }
+    },
+    "Toevoegen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add" } }
+      }
+    },
+    "Opslaan" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save" } }
+      }
+    },
+    "Favorieten" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Favorites" } }
+      }
+    },
+    "Exporteer favorieten en eigen zenders..." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Export favorites and custom stations..." } }
+      }
+    },
+    "Importeer favorieten..." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Import favorites..." } }
+      }
+    },
+    "Geexporteerd" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exported" } }
+      }
+    },
+    "Exporteert favorieten-slots en eigen zenders als JSON. Importeren biedt de keuze tussen samenvoegen of vervangen." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exports favorite slots and custom stations as JSON. Import lets you choose between merge or replace." } }
+      }
+    },
+    "Exporteer favorieten" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Export favorites" } }
+      }
+    },
+    "Kies een favorieten-bestand" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose a favorites file" } }
+      }
+    },
+    "Bestand heeft versie %d, deze app ondersteunt versie %d." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "File has version %d, this app supports version %d." } }
+      }
+    },
+    "Kon JSON niet lezen: %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Could not read JSON: %@" } }
+      }
+    },
+    "Bestaand favorieten-bestand gedetecteerd" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Existing favorites file detected" } }
+      }
+    },
+    "Samenvoegen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Merge" } }
+      }
+    },
+    "Vervangen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Replace" } }
+      }
+    },
+    "Recent geluisterd" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Recently played" } }
+      }
+    },
+    "Wis recent geluisterd" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Clear recently played" } }
+      }
+    },
+    "Recent geluisterd wissen?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Clear recently played?" } }
+      }
+    },
+    "Wis" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Clear" } }
+      }
+    },
+    "Radio Naoufal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Radio Naoufal" } }
+      }
+    },
+    "Een 1980s boombox op je Mac. Native Nederlandse radio met live VU-meters, EQ, AirPlay en Chromecast." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "A 1980s boombox on your Mac. Native Dutch radio with live VU-meters, EQ, AirPlay and Chromecast." } }
+      }
+    },
+    "Open GitHub-repo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open GitHub repo" } }
+      }
+    },
+    "Bekijk alle releases" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "View all releases" } }
+      }
+    },
+    "Meld een probleem" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Report an issue" } }
+      }
+    },
+    "Met dank aan" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Acknowledgements" } }
+      }
+    },
+    "Community database met duizenden internet-radio zenders." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Community database with thousands of internet radio stations." } }
+      }
+    },
+    "Discovery en casting via Bonjour, door dioKaratzas." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Discovery and casting via Bonjour, by dioKaratzas." } }
+      }
+    },
+    "Apple voor AVFoundation, MediaPlayer, Accelerate en SwiftUI." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Apple for AVFoundation, MediaPlayer, Accelerate and SwiftUI." } }
+      }
+    },
+    "Copyright 2026 Naoufal Andichi" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Copyright 2026 Naoufal Andichi" } }
+      }
     }
   },
   "version" : "1.0"

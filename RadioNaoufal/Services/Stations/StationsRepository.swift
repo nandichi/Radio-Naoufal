@@ -38,7 +38,28 @@ public final class StationsRepository {
     }
 
     public var allStations: [Station] {
-        curated + radioBrowser
+        curated + customStationsMapped + radioBrowser
+    }
+
+    /// Maps de DataStore `UserCustomStation` records naar `Station` zodat ze door
+    /// de drawer-views en preset-slots hetzelfde behandeld worden als curated/Radio-Browser zenders.
+    private var customStationsMapped: [Station] {
+        DataStore.shared.customStations.map { custom in
+            Station(
+                id: custom.id,
+                name: custom.name,
+                streamURL: custom.streamURL,
+                logoURL: custom.logoURL,
+                homepageURL: nil,
+                genre: .other,
+                region: .international,
+                dial: nil,
+                bitrate: nil,
+                codec: .unknown,
+                source: .userAdded,
+                tags: ["custom"]
+            )
+        }
     }
 
     public var stationsByGenre: [Station.Genre: [Station]] {

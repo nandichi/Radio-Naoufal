@@ -63,9 +63,41 @@ struct BoomboxView: View {
                 }
                 .padding(.horizontal, 18)
 
-                TunerDialView()
-                    .frame(height: 70)
-                    .padding(.horizontal, 22)
+                ZStack(alignment: .leading) {
+                    TunerDialView()
+                        .frame(height: 70)
+                        .padding(.horizontal, 22)
+
+                    HStack(spacing: 10) {
+                        RewindButton()
+                            .frame(width: 38, height: 38)
+
+                        if player.audio.isTimeShifted {
+                            HStack(spacing: 4) {
+                                Circle()
+                                    .fill(BoomboxTheme.presetRed)
+                                    .frame(width: 6, height: 6)
+                                    .shadow(color: BoomboxTheme.presetRed, radius: 3)
+                                Text(verbatim: "TIME-SHIFTED")
+                                    .font(.system(size: 9, weight: .heavy, design: .monospaced))
+                                    .tracking(1)
+                                    .foregroundStyle(BoomboxTheme.presetRed)
+                            }
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(
+                                Capsule().fill(Color.black.opacity(0.5))
+                            )
+                            .overlay(
+                                Capsule().stroke(BoomboxTheme.presetRed.opacity(0.6), lineWidth: 1)
+                            )
+                            .transition(.opacity.combined(with: .scale))
+                        }
+
+                        Spacer()
+                    }
+                    .padding(.leading, 32)
+                }
             }
             .padding(.vertical, 26)
             .padding(.horizontal, 26)

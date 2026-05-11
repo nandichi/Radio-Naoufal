@@ -11,6 +11,7 @@ public final class PlayerViewModel {
     public let cast: CastManager
     public let nowPlayingCenter: NowPlayingCenter
     public let dataStore: DataStore
+    public let podcasts: PodcastsRepository
 
     public private(set) var output: OutputTarget = .local
     public private(set) var error: String?
@@ -22,13 +23,15 @@ public final class PlayerViewModel {
         stations: StationsRepository = StationsRepository(),
         cast: CastManager = CastManager(),
         nowPlayingCenter: NowPlayingCenter = NowPlayingCenter(),
-        dataStore: DataStore = DataStore.shared
+        dataStore: DataStore = DataStore.shared,
+        podcasts: PodcastsRepository = PodcastsRepository()
     ) {
         self.audio = audio
         self.stations = stations
         self.cast = cast
         self.nowPlayingCenter = nowPlayingCenter
         self.dataStore = dataStore
+        self.podcasts = podcasts
 
         setupRemoteCommands()
     }
@@ -44,6 +47,7 @@ public final class PlayerViewModel {
             await audio.load(station: station)
             nowPlayingCenter.update(state: audio.status, nowPlaying: audio.nowPlaying)
             recordRecent(station: station)
+            AppPreferences.setLastStationID(station.id)
             if case .playing = cast.state {
                 await cast.play(station: station)
             }
@@ -84,6 +88,9 @@ public final class PlayerViewModel {
     public func setVolume(_ value: Float) {
         audio.setVolume(value)
         Task { await cast.setVolume(value) }
+        if UserDefaults.standard.bool(forKey: AppPreferences.Keys.rememberVolume) {
+            UserDefaults.standard.set(Double(audio.volume), forKey: AppPreferences.Keys.defaultVolume)
+        }
     }
 
     public func connectToChromecast(_ device: CastDevice) {
@@ -104,6 +111,23 @@ public final class PlayerViewModel {
 
     public func handleScrubFromNowPlaying() {
         // No-op for live streams
+    }
+
+    // MARK: - Podcasts
+
+    public func play(episode: PodcastEpisode, podcast: Podcast) {
+        Task {
+            await audio.loadEpisode(episode, podcast: podcast)
+            nowPlayingCenter.update(state: audio.status, nowPlaying: audio.nowPlaying)
+        }
+    }
+
+    public func seekEpisode(to seconds: TimeInterval) {
+        audio.seekEpisode(to: seconds)
+    }
+
+    public var isPlayingEpisode: Bool {
+        audio.currentEpisode != nil
     }
 
     // MARK: - Persistence (favorites + recent)
