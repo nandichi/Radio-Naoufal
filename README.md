@@ -71,7 +71,13 @@
 | **Bouw zelf** | Clone de repo en run `./Scripts/build-app.sh` | [Bouwen vanaf source](#-bouwen-vanaf-source) |
 | **Git clone** | `git clone https://github.com/nandichi/Radio-Naoufal.git` | [Clone](https://github.com/nandichi/Radio-Naoufal) |
 
-> **Eerste keer openen?** macOS Gatekeeper kan de DMG blokkeren omdat hij niet door Apple genotarized is. Klik rechts op `Radio Naoufal.app` en kies **Open**, bevestig daarna. Daarna onthoudt macOS de keuze. Zie ook [Code signing](#code-signing--notarization).
+> **Eerste keer openen op macOS 15 (Sequoia) of macOS 26 (Tahoe)?** Omdat de app niet Apple-notarized is, blokkeert Gatekeeper hem standaard. Open Terminal en voer dit uit (1 commando, klaar):
+>
+> ```bash
+> xattr -dr com.apple.quarantine "/Applications/Radio Naoufal.app"
+> ```
+>
+> Daarna start de app gewoon met dubbelklikken. Werkt niet? Zie de uitgebreide [installatie-uitleg](#installatie). De DMG bevat ook een `EERSTE GEBRUIK.txt` met dezelfde instructies.
 
 <br/>
 
@@ -198,8 +204,16 @@ Plus duizenden internationale zenders via **[Radio-Browser](https://www.radio-br
 1. Ga naar **[Releases](https://github.com/nandichi/Radio-Naoufal/releases/latest)**.
 2. Download `RadioNaoufal-x.y.z.dmg`.
 3. Dubbelklik de `.dmg`, sleep `Radio Naoufal.app` naar `/Applications`.
-4. **Eerste keer**: rechts-klik op de app -> **Open** -> bevestig (Gatekeeper, zie [code signing](#code-signing--notarization)).
+4. **Eerste keer (verplicht op macOS 15 Sequoia en macOS 26 Tahoe)**: open Terminal en voer uit:
+
+   ```bash
+   xattr -dr com.apple.quarantine "/Applications/Radio Naoufal.app"
+   ```
+
+   Dat verwijdert de `com.apple.quarantine`-vlag die macOS automatisch toevoegt bij gedownloade bestanden. Zonder deze stap wordt een app zonder Apple Developer ID op nieuwere macOS-versies direct gekild door de kernel (er verschijnt geen foutmelding, hij start kort en sluit weer).
 5. Klaar. Druk `Space` om af te spelen.
+
+> **Waarom moet dit?** De DMG bevat een ad-hoc gesignde app met hardened runtime, maar zonder Developer ID-certificaat (kost 99 USD/jaar bij Apple). Op macOS Sequoia/Tahoe weigert Gatekeeper standaard zo'n app. Het `xattr`-commando vertelt macOS expliciet dat jij deze app vertrouwt. Het is precies hetzelfde wat de "rechts-klik > Open"-truc deed in oudere macOS-versies - alleen die werkt niet meer betrouwbaar in Tahoe.
 
 ### Optie B - Homebrew (binnenkort)
 
@@ -277,14 +291,18 @@ De `.dmg` belandt in `dist/RadioNaoufal-1.0.0.dmg`.
 
 ### Code signing & notarization
 
-Standaard wordt de app **niet** gecodesigned. macOS Gatekeeper zal de DMG blokkeren. Twee opties:
+`build-app.sh` doet automatisch **ad-hoc code signing** met hardened runtime + entitlements. Dat is voldoende om de app te laten draaien op macOS 15 (Sequoia) en macOS 26 (Tahoe). Het is **niet** een Apple Developer ID-signature, dus Gatekeeper toont nog steeds een blokkade bij eerste opening - los je op met de `xattr`-stap uit [Installatie](#installatie).
 
-1. **Eerste keer openen via right-click**: rechts-klik op `Radio Naoufal.app` -> `Open` -> bevestig.
-2. **Properly signen + notarizen** (vereist Apple Developer-account, ~99 USD/jaar):
+Drie scenario's:
+
+1. **Lokaal bouwen + draaien op je eigen Mac**: gewoon `./Scripts/build-app.sh Release`. Geen extra stappen nodig - de build verwijdert direct het quarantine-attribuut.
+2. **Distribueren via GitHub Releases (zonder Developer ID)**: `./Scripts/make-dmg.sh`. Gebruikers moeten zelf de `xattr`-stap doen. De DMG bevat hiervoor een `EERSTE GEBRUIK.txt`.
+3. **Distribueren met Apple Developer ID-notarization** (vereist Apple Developer-account, 99 USD/jaar):
 
    ```bash
    codesign --deep --force --options runtime \
-     --sign "Developer ID Application: Naoufal Andichi (TEAMID)" \
+     --entitlements RadioNaoufal/RadioNaoufal.entitlements \
+     --sign "Developer ID Application: Jouw Naam (TEAMID)" \
      "build/Radio Naoufal.app"
 
    xcrun notarytool submit dist/RadioNaoufal-1.0.0.dmg \
@@ -295,6 +313,8 @@ Standaard wordt de app **niet** gecodesigned. macOS Gatekeeper zal de DMG blokke
 
    xcrun stapler staple dist/RadioNaoufal-1.0.0.dmg
    ```
+
+> **Belangrijk**: hardened runtime + geen enkele signature is een **fatale combinatie op macOS Tahoe** - de kernel weigert de binary uberhaupt te laden. Daarom doet `build-app.sh` altijd ad-hoc signing, ook als je geen Developer ID hebt. Zie de `--options runtime` flag in het script.
 
 <br/>
 

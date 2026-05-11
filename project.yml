@@ -23,7 +23,7 @@ settings:
 packages:
   ChromecastKit:
     url: https://github.com/dioKaratzas/swift-chromecast-kit
-    branch: main
+    exactVersion: 1.0.1
 
 targets:
   RadioNaoufal:

@@ -520,7 +520,19 @@ extension AudioEngine: AVPlayerItemMetadataOutputPushDelegate {
     }
 
     nonisolated private static func legacyStringValue(of item: AVMetadataItem) -> String? {
+        // AVMetadataItem.stringValue is sinds macOS 10.7 deprecated maar nog wel
+        // aanwezig in alle huidige releases. We benaderen hem via KVC zodat we
+        // de strict-concurrency-warning over @MainActor-isolated access vanuit
+        // de nonisolated push-delegate-callback omzeilen.
+        //
+        // Defensief: we checken eerst expliciet of het object op de selector
+        // reageert. Op een toekomstige macOS waarin de property echt verwijderd
+        // wordt, geeft KVC een onbekend-key crash; deze guard voorkomt dat en
+        // zorgt dat we gewoon `nil` retourneren (en metadata-parsing rustig
+        // overslaan) in plaats van de app neer te halen.
+        let selector = NSSelectorFromString("stringValue")
         let bridged = item as NSObject
+        guard bridged.responds(to: selector) else { return nil }
         return bridged.value(forKey: "stringValue") as? String
     }
 }

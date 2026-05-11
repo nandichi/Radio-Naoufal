@@ -12,8 +12,6 @@ struct RadioNaoufalApp: App {
 
     init() {
         AppPreferences.registerDefaults()
-        // Verwijder oude time-shift tmp-files (>1 dag) van vorige sessies
-        RewindFileWriter.cleanup()
         let player = PlayerViewModel()
         let settings = SettingsViewModel()
         let theme = ThemeProvider()
@@ -23,6 +21,14 @@ struct RadioNaoufalApp: App {
         _player = State(wrappedValue: player)
         _settings = State(wrappedValue: settings)
         _theme = State(wrappedValue: theme)
+
+        // Niet-essentiële tmp-cleanup van vorige sessies verloopt op een
+        // achtergrond-queue zodat het UI-thread-init niet blokkeert.
+        // Op trager filesystem of bij sandbox-permission-issues op nieuwere
+        // macOS versies (Tahoe) moet dit nooit de app-start kunnen tegenhouden.
+        Task.detached(priority: .background) {
+            RewindFileWriter.cleanup()
+        }
     }
 
     var body: some Scene {

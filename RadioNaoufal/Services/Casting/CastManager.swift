@@ -124,8 +124,7 @@ public final class CastManager {
                         connectTimeout: 12,
                         commandTimeout: 10,
                         heartbeatInterval: 5,
-                        autoReconnect: true,
-                        logLevel: .debug
+                        autoReconnect: true
                     )
                 )
                 try await session.connect()

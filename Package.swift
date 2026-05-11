@@ -11,7 +11,7 @@ let package = Package(
         .executable(name: "RadioNaoufal", targets: ["RadioNaoufal"])
     ],
     dependencies: [
-        .package(url: "https://github.com/dioKaratzas/swift-chromecast-kit", branch: "main")
+        .package(url: "https://github.com/dioKaratzas/swift-chromecast-kit", exact: "1.0.1")
     ],
     targets: [
         .executableTarget(

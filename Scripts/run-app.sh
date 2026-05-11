@@ -117,9 +117,21 @@ cat > "$APP_PATH/Contents/Info.plist" <<EOF
 </plist>
 EOF
 
-# Ad-hoc sign zodat hardened-runtime / TCC permission prompts werken
-echo "==> Ad-hoc signing..."
-codesign --force --deep --sign - "$APP_PATH" 2>&1 | tail -3 || true
+# Ad-hoc sign MET hardened runtime + entitlements.
+# Cruciaal voor macOS Tahoe (26): een binary met hardened runtime maar zonder
+# enige signature wordt direct door de kernel gekild. Ad-hoc signing volstaat
+# om te draaien op je eigen Mac; Gatekeeper-prompts moet de gebruiker zelf
+# weghalen via 'xattr -dr com.apple.quarantine' bij een gedistribueerde DMG.
+ENTITLEMENTS="$PROJECT_ROOT/RadioNaoufal/RadioNaoufal.entitlements"
+echo "==> Ad-hoc signing met hardened runtime + entitlements..."
+xattr -dr com.apple.quarantine "$APP_PATH" 2>/dev/null || true
+codesign --force --deep \
+    --sign - \
+    --entitlements "$ENTITLEMENTS" \
+    --options runtime \
+    --timestamp=none \
+    "$APP_PATH"
+codesign --verify --deep --strict --verbose=2 "$APP_PATH" || true
 
 echo ""
 echo "==> App klaar: $APP_PATH"
