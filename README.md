@@ -11,22 +11,22 @@
 <br/>
 <br/>
 
-<a href="https://github.com/naoufalandichi/Radio-Naoufal/releases/latest"><img src="https://img.shields.io/github/v/release/naoufalandichi/Radio-Naoufal?style=for-the-badge&label=Latest&color=ff6a3d&logo=github" alt="Latest release"/></a>
-<a href="https://github.com/naoufalandichi/Radio-Naoufal/releases"><img src="https://img.shields.io/github/downloads/naoufalandichi/Radio-Naoufal/total?style=for-the-badge&label=Downloads&color=3da9ff&logo=apple&logoColor=white" alt="Downloads"/></a>
+<a href="https://github.com/nandichi/Radio-Naoufal/releases/latest"><img src="https://img.shields.io/github/v/release/nandichi/Radio-Naoufal?style=for-the-badge&label=Latest&color=ff6a3d&logo=github" alt="Latest release"/></a>
+<a href="https://github.com/nandichi/Radio-Naoufal/releases"><img src="https://img.shields.io/github/downloads/nandichi/Radio-Naoufal/total?style=for-the-badge&label=Downloads&color=3da9ff&logo=apple&logoColor=white" alt="Downloads"/></a>
 <img src="https://img.shields.io/badge/macOS-15.0%2B-000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 15+"/>
 <img src="https://img.shields.io/badge/Swift-6.0-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 6"/>
 <img src="https://img.shields.io/badge/Xcode-16-147EFB?style=for-the-badge&logo=xcode&logoColor=white" alt="Xcode 16"/>
-<img src="https://img.shields.io/github/license/naoufalandichi/Radio-Naoufal?style=for-the-badge&color=11d27a" alt="License"/>
-<img src="https://img.shields.io/github/stars/naoufalandichi/Radio-Naoufal?style=for-the-badge&color=f5d23a&logo=github" alt="Stars"/>
+<img src="https://img.shields.io/github/license/nandichi/Radio-Naoufal?style=for-the-badge&color=11d27a" alt="License"/>
+<img src="https://img.shields.io/github/stars/nandichi/Radio-Naoufal?style=for-the-badge&color=f5d23a&logo=github" alt="Stars"/>
 
 <br/>
 <br/>
 
 ### Download
 
-<a href="https://github.com/naoufalandichi/Radio-Naoufal/releases/latest"><img src="https://img.shields.io/badge/Download%20.dmg-Latest%20release-ff6a3d?style=for-the-badge&logo=apple&logoColor=white&labelColor=0c0d10" alt="Download DMG" height="44"/></a>
+<a href="https://github.com/nandichi/Radio-Naoufal/releases/latest"><img src="https://img.shields.io/badge/Download%20.dmg-Latest%20release-ff6a3d?style=for-the-badge&logo=apple&logoColor=white&labelColor=0c0d10" alt="Download DMG" height="44"/></a>
 &nbsp;
-<a href="https://github.com/naoufalandichi/Radio-Naoufal/releases"><img src="https://img.shields.io/badge/Alle%20releases-Bekijk-3da9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=0c0d10" alt="All releases" height="44"/></a>
+<a href="https://github.com/nandichi/Radio-Naoufal/releases"><img src="https://img.shields.io/badge/Alle%20releases-Bekijk-3da9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=0c0d10" alt="All releases" height="44"/></a>
 &nbsp;
 <a href="#bouwen-vanaf-source"><img src="https://img.shields.io/badge/Of%20bouw%20zelf-from%20source-9aa0a6?style=for-the-badge&logo=swift&logoColor=white&labelColor=0c0d10" alt="Build from source" height="44"/></a>
 
@@ -66,10 +66,10 @@
 
 | Manier | Beschrijving | Link |
 | --- | --- | --- |
-| **DMG installer** | Klaar-voor-gebruik `.dmg` met `Radio Naoufal.app` erin | [Latest release](https://github.com/naoufalandichi/Radio-Naoufal/releases/latest) |
-| **GitHub Releases** | Alle versies + release notes | [Releases](https://github.com/naoufalandichi/Radio-Naoufal/releases) |
+| **DMG installer** | Klaar-voor-gebruik `.dmg` met `Radio Naoufal.app` erin | [Latest release](https://github.com/nandichi/Radio-Naoufal/releases/latest) |
+| **GitHub Releases** | Alle versies + release notes | [Releases](https://github.com/nandichi/Radio-Naoufal/releases) |
 | **Bouw zelf** | Clone de repo en run `./Scripts/build-app.sh` | [Bouwen vanaf source](#-bouwen-vanaf-source) |
-| **Git clone** | `git clone https://github.com/naoufalandichi/Radio-Naoufal.git` | [Clone](https://github.com/naoufalandichi/Radio-Naoufal) |
+| **Git clone** | `git clone https://github.com/nandichi/Radio-Naoufal.git` | [Clone](https://github.com/nandichi/Radio-Naoufal) |
 
 > **Eerste keer openen?** macOS Gatekeeper kan de DMG blokkeren omdat hij niet door Apple genotarized is. Klik rechts op `Radio Naoufal.app` en kies **Open**, bevestig daarna. Daarna onthoudt macOS de keuze. Zie ook [Code signing](#code-signing--notarization).
 
@@ -195,7 +195,7 @@ Plus duizenden internationale zenders via **[Radio-Browser](https://www.radio-br
 
 ### Optie A - Download de DMG (aanbevolen)
 
-1. Ga naar **[Releases](https://github.com/naoufalandichi/Radio-Naoufal/releases/latest)**.
+1. Ga naar **[Releases](https://github.com/nandichi/Radio-Naoufal/releases/latest)**.
 2. Download `RadioNaoufal-x.y.z.dmg`.
 3. Dubbelklik de `.dmg`, sleep `Radio Naoufal.app` naar `/Applications`.
 4. **Eerste keer**: rechts-klik op de app -> **Open** -> bevestig (Gatekeeper, zie [code signing](#code-signing--notarization)).
@@ -204,7 +204,7 @@ Plus duizenden internationale zenders via **[Radio-Browser](https://www.radio-br
 ### Optie B - Homebrew (binnenkort)
 
 ```bash
-brew install --cask naoufalandichi/tap/radio-naoufal
+brew install --cask nandichi/tap/radio-naoufal
 ```
 
 > Cask tap is in voorbereiding - zie [Roadmap](#roadmap).
@@ -378,7 +378,7 @@ Radio-Naoufal/
 - [ ] iOS / iPadOS companion (zelfde boombox UI in compact-mode)
 - [ ] Lyrics integratie (Musixmatch of MusicKit)
 
-> Suggesties? Open een [issue](https://github.com/naoufalandichi/Radio-Naoufal/issues/new).
+> Suggesties? Open een [issue](https://github.com/nandichi/Radio-Naoufal/issues/new).
 
 <br/>
 
@@ -435,11 +435,11 @@ Copyright (c) 2026 Naoufal Andichi.
 
 ## Star history
 
-<a href="https://star-history.com/#naoufalandichi/Radio-Naoufal&Date">
+<a href="https://star-history.com/#nandichi/Radio-Naoufal&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=naoufalandichi/Radio-Naoufal&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=naoufalandichi/Radio-Naoufal&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=naoufalandichi/Radio-Naoufal&type=Date" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=nandichi/Radio-Naoufal&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=nandichi/Radio-Naoufal&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=nandichi/Radio-Naoufal&type=Date" width="100%" />
   </picture>
 </a>
 
@@ -461,8 +461,8 @@ Copyright (c) 2026 Naoufal Andichi.
 
 #### Download
 
-- **DMG installer**: [Latest release](https://github.com/naoufalandichi/Radio-Naoufal/releases/latest)
-- **All releases**: [Releases page](https://github.com/naoufalandichi/Radio-Naoufal/releases)
+- **DMG installer**: [Latest release](https://github.com/nandichi/Radio-Naoufal/releases/latest)
+- **All releases**: [Releases page](https://github.com/nandichi/Radio-Naoufal/releases)
 - **From source**: see [Building from source](#bouwen-vanaf-source) above
 
 #### Highlights
