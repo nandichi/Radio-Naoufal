@@ -1,0 +1,611 @@
+{
+  "version": 2,
+  "updatedAt": "2026-05-11",
+  "stations": [
+    {
+      "id": "npo-radio1",
+      "name": "NPO Radio 1",
+      "streamURL": "https://icecast.omroep.nl/radio1-bb-mp3",
+      "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/NPO_Radio_1_logo_2014.svg/640px-NPO_Radio_1_logo_2014.svg.png",
+      "homepageURL": null,
+      "genre": "news",
+      "region": "national",
+      "dial": 88.4,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "public",
+        "news",
+        "sport",
+        "talk"
+      ]
+    },
+    {
+      "id": "npo-radio2",
+      "name": "NPO Radio 2",
+      "streamURL": "https://icecast.omroep.nl/radio2-bb-mp3",
+      "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/NPO_Radio_2_logo.svg/640px-NPO_Radio_2_logo.svg.png",
+      "homepageURL": null,
+      "genre": "popClassics",
+      "region": "national",
+      "dial": 92.6,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "public",
+        "pop",
+        "classics"
+      ]
+    },
+    {
+      "id": "npo-3fm",
+      "name": "NPO 3FM",
+      "streamURL": "https://icecast.omroep.nl/3fm-bb-mp3",
+      "logoURL": "https://www.npo3fm.nl/apple-touch-icon.png",
+      "homepageURL": null,
+      "genre": "alternative",
+      "region": "national",
+      "dial": 96.8,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "public",
+        "alternative",
+        "rock",
+        "indie"
+      ]
+    },
+    {
+      "id": "npo-radio4",
+      "name": "NPO Radio 4",
+      "streamURL": "https://icecast.omroep.nl/radio4-bb-mp3",
+      "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/NPO_Radio_4_logo_2014.svg/1200px-NPO_Radio_4_logo_2014.svg.png",
+      "homepageURL": null,
+      "genre": "classical",
+      "region": "national",
+      "dial": 98.7,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "public",
+        "classical",
+        "opera"
+      ]
+    },
+    {
+      "id": "npo-radio5",
+      "name": "NPO Radio 5",
+      "streamURL": "https://icecast.omroep.nl/radio5-bb-mp3",
+      "logoURL": "https://www.nporadio5.nl/apple-touch-icon.png",
+      "homepageURL": null,
+      "genre": "oldies",
+      "region": "national",
+      "dial": 1008.0,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "public",
+        "oldies",
+        "60s",
+        "70s"
+      ]
+    },
+    {
+      "id": "npo-funx",
+      "name": "FunX",
+      "streamURL": "https://icecast.omroep.nl/funx-bb-mp3",
+      "logoURL": "https://www.funx.nl/_next/static/media/funx-logo.svg",
+      "homepageURL": null,
+      "genre": "urban",
+      "region": "national",
+      "dial": 103.7,
+      "bitrate": 32,
+      "codec": "aac",
+      "source": "curated",
+      "tags": [
+        "public",
+        "urban",
+        "hiphop",
+        "young"
+      ]
+    },
+    {
+      "id": "npo-souljazz",
+      "name": "NPO Radio 6 Soul & Jazz",
+      "streamURL": "https://icecast.omroep.nl/radio6-bb-mp3",
+      "logoURL": "https://raw.githubusercontent.com/wootje/radiotv/main/radio/logo/radio6.png",
+      "homepageURL": null,
+      "genre": "soulJazz",
+      "region": "national",
+      "dial": null,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "public",
+        "soul",
+        "jazz"
+      ]
+    },
+    {
+      "id": "sky-radio",
+      "name": "Sky Radio",
+      "streamURL": "https://www.mp3streams.nl/zender/skyradio/stream/8-mp3-128",
+      "logoURL": "https://www.skyradio.nl/favicon.ico",
+      "homepageURL": null,
+      "genre": "hits",
+      "region": "national",
+      "dial": 101.2,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "hits",
+        "pop"
+      ]
+    },
+    {
+      "id": "radio538",
+      "name": "Radio 538",
+      "streamURL": "http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538.mp3",
+      "logoURL": "https://www.538.nl/favicon.ico",
+      "homepageURL": null,
+      "genre": "top40",
+      "region": "national",
+      "dial": 102.1,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "top40",
+        "dance"
+      ]
+    },
+    {
+      "id": "qmusic",
+      "name": "Qmusic",
+      "streamURL": "https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_live_96.mp3",
+      "logoURL": "https://qmusic.nl/favicon.ico",
+      "homepageURL": null,
+      "genre": "hits",
+      "region": "national",
+      "dial": 100.7,
+      "bitrate": 96,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "hits",
+        "comedy"
+      ]
+    },
+    {
+      "id": "radio10",
+      "name": "Radio 10",
+      "streamURL": "http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO10.mp3",
+      "logoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScXQ3C4MdB2iKNRXVmQSy-fl3MBqAi-SX2JU3p-ZeLSiLCVbDw&s",
+      "homepageURL": null,
+      "genre": "oldies",
+      "region": "national",
+      "dial": null,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "70s",
+        "80s",
+        "90s"
+      ]
+    },
+    {
+      "id": "radio-veronica",
+      "name": "Radio Veronica",
+      "streamURL": "https://playerservices.streamtheworld.com/api/livestream-redirect/VERONICA",
+      "logoURL": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4k3hucsw1kfn-radio-veronica-programma-thumbnail.jpg",
+      "homepageURL": null,
+      "genre": "rock",
+      "region": "national",
+      "dial": 103.4,
+      "bitrate": 128,
+      "codec": "unknown",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "rock",
+        "classics"
+      ]
+    },
+    {
+      "id": "100pct-nl",
+      "name": "100% NL",
+      "streamURL": "https://stream.100p.nl/100pctnl.mp3",
+      "logoURL": "https://100p.nl/themes/custom/honderd_procent_nl/logo.svg",
+      "homepageURL": null,
+      "genre": "dutch",
+      "region": "national",
+      "dial": null,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "dutch",
+        "nederlandstalig"
+      ]
+    },
+    {
+      "id": "slamfm",
+      "name": "SLAM!",
+      "streamURL": "https://stream.slam.nl/slam_mp3_hi",
+      "logoURL": "https://www.slam.nl/favicon.ico",
+      "homepageURL": null,
+      "genre": "dance",
+      "region": "national",
+      "dial": null,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "dance",
+        "edm"
+      ]
+    },
+    {
+      "id": "bnr",
+      "name": "BNR Nieuwsradio",
+      "streamURL": "https://stream.bnr.nl/bnr_mp3_128_20",
+      "logoURL": "https://static.bnr.nl/assets/bnr-next/logo.png",
+      "homepageURL": null,
+      "genre": "business",
+      "region": "national",
+      "dial": 87.9,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "news",
+        "business"
+      ]
+    },
+    {
+      "id": "sublime",
+      "name": "Sublime",
+      "streamURL": "https://playerservices.streamtheworld.com/api/livestream-redirect/SUBLIME.mp3?dist=sublime_website",
+      "logoURL": "https://sublime.nl/themes/custom/sublime/logo.svg",
+      "homepageURL": null,
+      "genre": "soulJazz",
+      "region": "national",
+      "dial": null,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "soul",
+        "jazz"
+      ]
+    },
+    {
+      "id": "kink",
+      "name": "KINK",
+      "streamURL": "https://playerservices.streamtheworld.com/api/livestream-redirect/KINK.mp3",
+      "logoURL": "https://kink.nl/static/apple-touch-icon.png",
+      "homepageURL": null,
+      "genre": "alternative",
+      "region": "national",
+      "dial": null,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "online",
+        "alternative",
+        "rock"
+      ]
+    },
+    {
+      "id": "joe",
+      "name": "JOE",
+      "streamURL": "https://stream.joe.nl/joe/aachigh",
+      "logoURL": "https://static.mytuner.mobi/media/tvos_radios/pkhqkus8dmde.jpg",
+      "homepageURL": null,
+      "genre": "popClassics",
+      "region": "national",
+      "dial": null,
+      "bitrate": 95,
+      "codec": "heAac",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "classics",
+        "feelgood"
+      ]
+    },
+    {
+      "id": "arrow-classic",
+      "name": "Arrow Classic Rock",
+      "streamURL": "http://stream.gal.io/arrow",
+      "logoURL": "https://www.arrow.nl/wp-content/uploads/2020/08/logo.png",
+      "homepageURL": null,
+      "genre": "rock",
+      "region": "national",
+      "dial": null,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "online",
+        "rock",
+        "classics"
+      ]
+    },
+    {
+      "id": "radio-nl",
+      "name": "RADIONL",
+      "streamURL": "https://stream.radionl.fm/radionl",
+      "logoURL": "https://radionl.fm/wp-content/uploads/2024/10/logo-RADIONL-1.png",
+      "homepageURL": null,
+      "genre": "dutch",
+      "region": "national",
+      "dial": null,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "dutch"
+      ]
+    },
+    {
+      "id": "decibel",
+      "name": "Radio Decibel",
+      "streamURL": "http://stream.decibel.nl/decibel.mp3",
+      "logoURL": "https://www.decibel.nl/favicon.ico",
+      "homepageURL": null,
+      "genre": "dance",
+      "region": "national",
+      "dial": null,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "commercial",
+        "hardstyle",
+        "dance"
+      ]
+    },
+    {
+      "id": "radio-noordzee",
+      "name": "Radio Noordzee",
+      "streamURL": "https://22553.live.streamtheworld.com/TLPSTR17.mp3",
+      "logoURL": "https://i.ibb.co/fYsYN5nv/486279844-1309381596939444-8468122003951244453-n.jpg",
+      "homepageURL": null,
+      "genre": "popClassics",
+      "region": "national",
+      "dial": null,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "online",
+        "classics"
+      ]
+    },
+    {
+      "id": "nh-radio",
+      "name": "RTV Noord Holland (NH Radio)",
+      "streamURL": "https://ice.cr6.streamzilla.xlcdn.com:8000/sz=nhnieuws=NHRadio_mp3",
+      "logoURL": "https://www.nhnieuws.nl/nh/apple-touch-icon.png",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "noordHolland",
+      "dial": 87.9,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "noord-holland"
+      ]
+    },
+    {
+      "id": "omroep-brabant",
+      "name": "Omroep Brabant",
+      "streamURL": "http://streaming.omroepbrabant.nl/mp3hq",
+      "logoURL": "http://www.omroepbrabant.nl/favicon.ico",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "noordBrabant",
+      "dial": 97.5,
+      "bitrate": 256,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "brabant"
+      ]
+    },
+    {
+      "id": "rtv-rijnmond",
+      "name": "Radio Rijnmond",
+      "streamURL": "http://d2e9xgjjdd9cr5.cloudfront.net/icecast/rijnmond/radio-mp3",
+      "logoURL": "https://s.regiogroei.cloud/img/favicons/rijnmond/apple-touch-icon.png?v=1689602147266",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "zuidHolland",
+      "dial": 93.4,
+      "bitrate": 160,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "rotterdam",
+        "rijnmond"
+      ]
+    },
+    {
+      "id": "omroep-west",
+      "name": "Omroep West",
+      "streamURL": "http://icecast.stream.bbvms.com/omroepwest_radio",
+      "logoURL": "https://s.regiogroei.cloud/img/favicons/west/apple-touch-icon.png?v=1698053263425",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "zuidHolland",
+      "dial": 89.3,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "den-haag"
+      ]
+    },
+    {
+      "id": "rtv-utrecht",
+      "name": "Radio M Utrecht",
+      "streamURL": "https://d18rwjdhpr8dcw.cloudfront.net/icecast/rtvutrecht/radiomutrecht-bb-mp3",
+      "logoURL": "https://s.regiogroei.cloud/img/favicons/utrecht/apple-touch-icon.png?v=1698097333309",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "utrecht",
+      "dial": 93.1,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "utrecht"
+      ]
+    },
+    {
+      "id": "omroep-gelderland",
+      "name": "Radio Gelderland",
+      "streamURL": "https://d2od87akyl46nm.cloudfront.net/icecast/omroepgelderland/radiogelderland",
+      "logoURL": "https://s.regiogroei.cloud/Logo-los_1024.png",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "gelderland",
+      "dial": 89.2,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "gelderland"
+      ]
+    },
+    {
+      "id": "rtv-oost",
+      "name": "Radio Oost",
+      "streamURL": "https://d34cg2bnc08ruf.cloudfront.net/icecast/rtvoost/radio-oost-mp3",
+      "logoURL": "https://s.regiogroei.cloud/img/favicons/oost/apple-touch-icon.png?v=20260216",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "overijssel",
+      "dial": 89.4,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "overijssel"
+      ]
+    },
+    {
+      "id": "rtv-drenthe",
+      "name": "RTV Drenthe",
+      "streamURL": "https://cdn.rtvdrenthe.nl/icecast/rtvdrenthe/rtvradio",
+      "logoURL": "https://werkenbijrtvdrenthe.nl/wp-content/uploads/2021/03/logo_RTV_Drenthe_Online_RGB.png",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "drenthe",
+      "dial": 91.6,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "drenthe"
+      ]
+    },
+    {
+      "id": "rtv-noord",
+      "name": "RTV Noord",
+      "streamURL": "http://media.rtvnoord.nl/icecast/rtvnoord/radio",
+      "logoURL": "https://s.regiogroei.cloud/rtvnoord/27c427e/img/favicons/groningen/apple-touch-icon.png?v=1685435658743",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "groningen",
+      "dial": 95.4,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "groningen"
+      ]
+    },
+    {
+      "id": "omrop-fryslan",
+      "name": "Omrop Fryslân Radio",
+      "streamURL": "https://d3pvma9xb2775h.cloudfront.net/icecast/omropfryslan/radio.mp3",
+      "logoURL": "https://s.regiogroei.cloud/img/favicons/friesland/apple-touch-icon.png?v=1687163124059",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "friesland",
+      "dial": 92.2,
+      "bitrate": 192,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "friesland",
+        "frysk"
+      ]
+    },
+    {
+      "id": "l1",
+      "name": "L1 Radio",
+      "streamURL": "http://d34pj260kw1xmk.cloudfront.net/icecast/l1/radio-bb-mp3",
+      "logoURL": "https://s.regiogroei.cloud/img/favicons/l1/apple-touch-icon.png?v=1709566299847",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "limburg",
+      "dial": 95.3,
+      "bitrate": 256,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "limburg"
+      ]
+    },
+    {
+      "id": "omroep-zeeland",
+      "name": "Omroep Zeeland Radio",
+      "streamURL": "https://d3isaxd2t6q8zm.cloudfront.net/icecast/omroepzeeland/omroepzeeland_radio",
+      "logoURL": "https://s.regiogroei.cloud/img/favicons/zeeland/android-chrome-192x192.png",
+      "homepageURL": null,
+      "genre": "regional",
+      "region": "zeeland",
+      "dial": 87.9,
+      "bitrate": 128,
+      "codec": "mp3",
+      "source": "curated",
+      "tags": [
+        "regional",
+        "zeeland"
+      ]
+    }
+  ]
+}

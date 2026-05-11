@@ -1,0 +1,369 @@
+{
+  "sourceLanguage" : "nl",
+  "strings" : {
+    "Afspelen" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Playback"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afspelen"
+          }
+        }
+      }
+    },
+    "Afspelen/Pauzeren" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Play/Pause" } },
+        "nl" : { "stringUnit" : { "state" : "translated", "value" : "Afspelen/Pauzeren" } }
+      }
+    },
+    "Annuleer timer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel timer" } }
+      }
+    },
+    "Browse zenders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Browse stations" } }
+      }
+    },
+    "Bezig met laden" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Loading" } }
+      }
+    },
+    "BROWSE STATIONS" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "BROWSE STATIONS" } }
+      }
+    },
+    "Chromecast" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Chromecast" } }
+      }
+    },
+    "Categorieen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Categories" } }
+      }
+    },
+    "ChromecastKit niet gevonden - cast werkt niet" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "ChromecastKit not found - cast not available" } }
+      }
+    },
+    "Deze Mac" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This Mac" } }
+      }
+    },
+    "Eigen tijd: %d min" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Custom time: %d min" } }
+      }
+    },
+    "Favorieten" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Favorites" } }
+      }
+    },
+    "Geen apparaten gevonden" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No devices found" } }
+      }
+    },
+    "Geen favorieten ingesteld" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No favorites set" } }
+      }
+    },
+    "Geen resultaten" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No results" } }
+      }
+    },
+    "Geen zender" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No station" } }
+      }
+    },
+    "GEEN ZENDER GESELECTEERD" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "NO STATION SELECTED" } }
+      }
+    },
+    "Gepauzeerd" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Paused" } }
+      }
+    },
+    "Gestopt" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stopped" } }
+      }
+    },
+    "Hits" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hits" } }
+      }
+    },
+    "Houd een preset-knop op de boombox lang ingedrukt om er een zender aan toe te wijzen." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Long-press a preset button on the boombox to assign a station." } }
+      }
+    },
+    "Klassiek" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Classical" } }
+      }
+    },
+    "Nederlandstalig" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Dutch language" } }
+      }
+    },
+    "Nieuws" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "News" } }
+      }
+    },
+    "Nog niets geluisterd" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Nothing played yet" } }
+      }
+    },
+    "Onbekende fout" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unknown error" } }
+      }
+    },
+    "Oldies" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Oldies" } }
+      }
+    },
+    "Open Radio Naoufal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open Radio Naoufal" } }
+      }
+    },
+    "Overig" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Other" } }
+      }
+    },
+    "Pop Classics" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pop Classics" } }
+      }
+    },
+    "Preset %d instellen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Set preset %d" } }
+      }
+    },
+    "Recent" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Recent" } }
+      }
+    },
+    "Regionaal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Regional" } }
+      }
+    },
+    "Rock" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Rock" } }
+      }
+    },
+    "Slaaptimer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sleep timer" } }
+      }
+    },
+    "Sluit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Close" } }
+      }
+    },
+    "Soul & Jazz" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Soul & Jazz" } }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start" } }
+      }
+    },
+    "Stand-by" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stand-by" } }
+      }
+    },
+    "Stop afspelen na" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stop playback after" } }
+      }
+    },
+    "Stop casten" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stop casting" } }
+      }
+    },
+    "Stop Radio Naoufal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quit Radio Naoufal" } }
+      }
+    },
+    "Speelt af" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Playing" } }
+      }
+    },
+    "Top 40" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Top 40" } }
+      }
+    },
+    "Urban" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Urban" } }
+      }
+    },
+    "Verbinding verbreken" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Disconnect" } }
+      }
+    },
+    "Verwijder huidige preset" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove current preset" } }
+      }
+    },
+    "Volgende zender" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Next station" } }
+      }
+    },
+    "Vorige zender" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Previous station" } }
+      }
+    },
+    "Zakelijk" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Business" } }
+      }
+    },
+    "Zoek alle Nederlandse zenders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search all Dutch stations" } }
+      }
+    },
+    "Zoek Nederlandse zenders..." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search Dutch stations..." } }
+      }
+    },
+    "Zoek zender" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search station" } }
+      }
+    },
+    "Zoek zenders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search stations" } }
+      }
+    },
+    "Zoeken" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search" } }
+      }
+    },
+    "Zorg dat je Chromecast op hetzelfde Wi-Fi netwerk staat." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Make sure your Chromecast is on the same Wi-Fi network." } }
+      }
+    },
+    "ON AIR" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "ON AIR" } }
+      }
+    },
+    "PAUSED" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "PAUSED" } }
+      }
+    },
+    "STDBY" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "STDBY" } }
+      }
+    },
+    "ERROR" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "ERROR" } }
+      }
+    },
+    "TUNING.." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "TUNING.." } }
+      }
+    },
+    "RADIO NAOUFAL" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "RADIO NAOUFAL" } }
+      }
+    },
+    "VOLUME" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "VOLUME" } }
+      }
+    },
+    "TUNING" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "TUNING" } }
+      }
+    },
+    "Alle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All" } }
+      }
+    },
+    "Slot %d - lang indrukken om in te stellen" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Slot %d - long-press to assign" } }
+      }
+    },
+    "Preset %d" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Preset %d" } }
+      }
+    },
+    "Typ een zenderlokaal naam of trefwoord. We zoeken zowel in curated stations als in Radio-Browser." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Type a station name or keyword. We search both curated stations and Radio-Browser." } }
+      }
+    },
+    "Probeer een andere zoekterm." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Try a different search term." } }
+      }
+    },
+    "Hier zie je een lijst van zenders waarnaar je recent hebt geluisterd." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Here you'll see a list of recently played stations." } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

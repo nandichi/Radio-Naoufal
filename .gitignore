@@ -1,0 +1,35 @@
+# Build artifacts
+build/
+DerivedData/
+.build/
+*.xcodeproj/
+*.xcworkspace/
+!project.yml
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store
+*.swp
+
+# Distribution
+*.dmg
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# User-specific
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+
+# Crash reports
+*.crash
+
+# Logs
+*.log

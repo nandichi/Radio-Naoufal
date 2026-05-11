@@ -1,0 +1,110 @@
+name: RadioNaoufal
+options:
+  bundleIdPrefix: nl.naoufal
+  deploymentTarget:
+    macOS: "15.0"
+  developmentLanguage: nl
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    DEAD_CODE_STRIPPING: YES
+    GCC_NO_COMMON_BLOCKS: YES
+    CLANG_ENABLE_OBJC_ARC: YES
+
+packages:
+  ChromecastKit:
+    url: https://github.com/dioKaratzas/swift-chromecast-kit
+    branch: main
+
+targets:
+  RadioNaoufal:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: RadioNaoufal
+        excludes:
+          - "Info.plist"
+          - "RadioNaoufal.entitlements"
+    resources:
+      - path: RadioNaoufal/Resources
+    dependencies:
+      - package: ChromecastKit
+    info:
+      path: RadioNaoufal/Info.plist
+      properties:
+        CFBundleName: Radio Naoufal
+        CFBundleDisplayName: Radio Naoufal
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "1"
+        LSMinimumSystemVersion: "15.0"
+        LSApplicationCategoryType: public.app-category.music
+        NSHumanReadableCopyright: "Copyright 2026 Naoufal Andichi"
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+          NSAllowsArbitraryLoadsInWebContent: false
+        NSLocalNetworkUsageDescription: "Radio Naoufal gebruikt het lokale netwerk om Chromecast-apparaten te ontdekken."
+        NSBonjourServices:
+          - "_googlecast._tcp"
+        NSAppleEventsUsageDescription: "Radio Naoufal heeft toegang nodig voor het bedienen van de afspeellijst."
+        LSUIElement: false
+    entitlements:
+      path: RadioNaoufal/RadioNaoufal.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
+        com.apple.security.network.client: true
+        com.apple.security.network.server: true
+        com.apple.security.device.audio-input: false
+        com.apple.security.files.user-selected.read-write: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: nl.naoufal.radio-naoufal
+        PRODUCT_NAME: "Radio Naoufal"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_EMIT_LOC_STRINGS: YES
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+        COMBINE_HIDPI_IMAGES: YES
+
+  RadioNaoufalTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: RadioNaoufalTests
+    dependencies:
+      - target: RadioNaoufal
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: nl.naoufal.radio-naoufal.tests
+
+schemes:
+  RadioNaoufal:
+    build:
+      targets:
+        RadioNaoufal: all
+        RadioNaoufalTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - RadioNaoufalTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
