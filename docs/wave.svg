@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" role="img" aria-label="Animated wave divider">
+  <defs>
+    <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff6a3d"/>
+      <stop offset="50%" stop-color="#f5d23a"/>
+      <stop offset="100%" stop-color="#3da9ff"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#waveGrad)" stroke-width="2.4" stroke-linecap="round">
+    <path d="M 0 30 Q 75 6 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30" opacity="0.95">
+      <animate attributeName="d"
+        values="M 0 30 Q 75 6 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30;
+                M 0 30 Q 75 54 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30;
+                M 0 30 Q 75 6 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30"
+        dur="3.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 0 30 Q 75 14 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30" opacity="0.5">
+      <animate attributeName="d"
+        values="M 0 30 Q 75 46 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30;
+                M 0 30 Q 75 14 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30;
+                M 0 30 Q 75 46 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30"
+        dur="4.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 0 30 Q 75 22 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30" opacity="0.3">
+      <animate attributeName="d"
+        values="M 0 30 Q 75 38 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30;
+                M 0 30 Q 75 22 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30;
+                M 0 30 Q 75 38 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30"
+        dur="6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>
